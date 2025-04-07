@@ -1,0 +1,298 @@
+/* Estilos generales */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    margin: 0; /* Quitamos margen por defecto */
+    padding: 0; /* Quitamos padding por defecto */
+    background-color: #f0f2f5; /* Un fondo ligeramente diferente */
+    color: #333;
+    display: flex; /* Usamos flex para centrar el contenedor si la pantalla es alta */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 700px; /* Un poco más estrecho */
+    width: 90%; /* Usa porcentaje para responsividad */
+    margin: 20px auto; /* Margen arriba/abajo y centrado horizontal */
+    padding: 20px;
+    background-color: #f0f2f5; /* Mismo fondo que el body, las cards tendrán fondo blanco */
+    box-shadow: none; /* Quitamos sombra del contenedor general */
+    border-radius: 0; /* Quitamos bordes redondeados del contenedor general */
+}
+
+/* Estilo 'Card' para las diferentes secciones */
+.card {
+    background-color: #fff;
+    padding: 25px 30px;
+    margin-bottom: 20px; /* Espacio entre cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Título principal */
+h1 {
+    color: #1877f2; /* Azul estilo Facebook/Material */
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em; /* Más grande */
+}
+h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Línea sutil debajo de H2 */
+    padding-bottom: 10px;
+}
+
+
+/* Párrafo introductorio */
+p {
+    margin-bottom: 15px;
+    color: #606770; /* Gris más suave */
+}
+
+/* Wrapper para input file y botón */
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre input y botón */
+    flex-wrap: wrap; /* Permitir que el botón baje si no cabe */
+}
+
+/* Inputs generales (file, number) */
+input[type="file"],
+input[type="number"] {
+    padding: 10px 12px;
+    border: 1px solid #ccd0d5; /* Borde gris claro */
+    border-radius: 6px;
+    font-size: 1em;
+    flex-grow: 1; /* Permite que el input crezca */
+    min-width: 150px; /* Ancho mínimo */
+}
+
+input[type="number"] {
+    max-width: 100px; /* Ancho específico para número */
+    text-align: center;
+}
+
+/* Estilo para ocultar el texto feo del input file y usar el botón */
+/* (Esto puede variar entre navegadores, una solución más robusta requiere JS o CSS más complejo) */
+/* input[type="file"] { ... } */
+
+
+/* Botones generales */
+button {
+    background-color: #1877f2; /* Azul principal */
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Más padding horizontal */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Transiciones suaves */
+    white-space: nowrap; /* Evita que el texto del botón se rompa */
+}
+
+button:hover {
+    background-color: #166fe5; /* Azul ligeramente más oscuro */
+}
+
+button:active {
+    background-color: #1461cc; /* Azul más oscuro al hacer clic */
+    transform: scale(0.98); /* Efecto de presión */
+}
+
+/* Botón de subida específico si es necesario */
+#uploadButton {
+    /* Puede tener estilos específicos si es necesario */
+}
+
+/* Sección de configuración del Quiz */
+.quiz-config {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+label {
+    font-weight: 600; /* Semi-negrita */
+    color: #333;
+}
+
+/* --- Estilos para el Área de Preguntas --- */
+#question-area {
+    /* El contenedor principal de la pregunta actual */
+}
+
+/* Card individual para cada pregunta */
+.question-card {
+    background-color: #fff;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto de la pregunta */
+.question-text {
+    font-size: 1.15em; /* Un poco más grande */
+    margin-bottom: 25px; /* Más espacio antes de las opciones */
+    color: #1c1e21; /* Texto principal oscuro */
+    line-height: 1.4;
+}
+.question-text strong {
+    color: #1877f2; /* Destacar el número de pregunta */
+}
+
+/* Contenedor de las opciones */
+.options-container {
+    display: flex;
+    flex-direction: column; /* Opciones una debajo de la otra */
+    gap: 12px; /* Espacio entre botones de opción */
+}
+
+/* Botones de opción */
+.option-button {
+    background-color: #e4e6eb; /* Fondo gris claro */
+    color: #050505; /* Texto oscuro */
+    border: 1px solid #ccd0d5;
+    padding: 12px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: left; /* Alinear texto a la izquierda */
+    width: 100%; /* Ocupar todo el ancho */
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    font-weight: normal; /* Quitamos negrita de botones generales */
+    box-shadow: none; /* Sin sombra inicial */
+}
+
+.option-button:hover {
+    background-color: #dcdfe4; /* Gris ligeramente más oscuro */
+    border-color: #b0b3b8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra sutil al pasar */
+}
+
+.option-button:active {
+    background-color: #cfd2d6;
+    transform: scale(0.99); /* Efecto sutil al hacer clic */
+    box-shadow: none; /* Quitar sombra al hacer clic */
+}
+
+/* Estilos para feedback visual en botones de opción */
+.option-button.correct {
+    background-color: #a3e9a4 !important; /* Verde claro (importante para sobrescribir hover) */
+    border-color: #5fcf60 !important;
+    color: #155724 !important; /* Texto verde oscuro */
+    font-weight: bold;
+}
+
+.option-button.incorrect {
+    background-color: #f4a8a8 !important; /* Rojo claro */
+    border-color: #e98080 !important;
+    color: #721c24 !important; /* Texto rojo oscuro */
+}
+
+.option-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.9; /* Ligeramente opaco cuando está deshabilitado después de responder */
+}
+
+
+/* --- Estilos para la Sección de Resultados --- */
+#result-section h2 {
+    color: #1877f2; /* Mantener consistencia */
+}
+#result-section p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+#result-section p strong {
+    font-size: 1.2em;
+    color: #333;
+}
+#result-section p em { /* Mensaje de feedback */
+    display: block; /* En bloque */
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e7f3ff; /* Fondo azul muy claro */
+    border-left: 4px solid #1877f2; /* Barra lateral azul */
+    color: #1c1e21;
+    font-style: normal; /* Quitamos cursiva por defecto */
+    border-radius: 4px;
+}
+#tryAgainButton { /* Botón para mismo documento */
+     /* Estilos por defecto del botón azul ya aplican */
+}
+#restartButton { /* Botón para documento nuevo */
+    margin-top: 20px; /* Espacio antes del botón reiniciar */
+    background-color: #42b72a; /* Verde para reiniciar/nuevo intento */
+    border: none;
+}
+#restartButton:hover {
+    background-color: #3ba326;
+}
+#restartButton:active {
+    background-color: #359122;
+}
+
+
+/* Estilo para el mensaje de carga */
+#loading-message {
+    text-align: center;
+    font-weight: bold;
+    color: #1877f2;
+}
+#loading-message p {
+    color: #1877f2; /* Asegurar color del texto */
+}
+
+/* Media Query para pantallas más pequeñas (ejemplo) */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .card {
+        padding: 20px;
+    }
+    .file-input-wrapper {
+        flex-direction: column; /* Apilar input y botón en móvil */
+        align-items: stretch; /* Estirar elementos */
+    }
+    input[type="file"],
+    #uploadButton {
+        width: 100%; /* Ocupar todo el ancho */
+    }
+    .quiz-config {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    input[type="number"] {
+        max-width: none; /* Permitir que ocupe más ancho */
+        width: 100%;
+    }
+    #startButton {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .question-card {
+        padding: 20px;
+    }
+    #result-section button { /* Hacer botones de resultado full-width en móvil */
+      width: 100%;
+      margin-bottom: 10px; /* Añadir espacio entre ellos */
+      margin-right: 0 !important; /* Quitar margen derecho */
+    }
+    #result-section button:last-of-type {
+        margin-bottom: 0;
+    }
+}
