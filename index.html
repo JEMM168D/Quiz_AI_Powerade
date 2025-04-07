@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz IA a partir de Documentos (OpenAI en GCP)</title>
+    <!-- Enlazamos el archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container"> <!-- Contenedor principal -->
+
+    <h1>Generador de Quiz con IA</h1>
+
+    <p>Sube un documento de texto (.txt, .pdf, .docx) para generar un cuestionario basado en su contenido usando OpenAI.</p>
+
+    <!-- Sección para subir el archivo -->
+    <div id="upload-section" class="card">
+        <label for="documentUpload">Selecciona un archivo (.txt, .pdf, .docx):</label>
+        <div class="file-input-wrapper">
+         <input type="file" id="documentUpload" name="documentUpload"
+             accept=".txt,.pdf,.docx,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+          <button id="uploadButton">Analizar Documento</button>
+        </div>
+    </div>
+
+    <!-- Sección del Quiz (inicialmente oculta por JS) -->
+    <div id="quiz-section" class="card" style="display: none;"> <!-- Oculta inicialmente -->
+        <h2>Configuración del Quiz</h2>
+        <div class="quiz-config">
+            <label for="numQuestions">Número de preguntas:</label>
+            <!-- Valor por defecto 10, max se ajustará por JS -->
+            <input type="number" id="numQuestions" name="numQuestions" min="1" value="10">
+            <button id="startButton">Empezar Quiz</button>
+        </div>
+    </div>
+
+     <!-- Área donde se mostrarán las preguntas (inicialmente oculta por JS) -->
+    <div id="question-area" style="display: none;">
+        <!-- Las preguntas se insertarán aquí dinámicamente por JS -->
+    </div>
+
+    <!-- Sección donde se mostrarán los resultados finales (inicialmente oculta por JS) -->
+    <div id="result-section" class="card" style="display: none;"> <!-- Oculta inicialmente -->
+        <!-- Los resultados se insertarán aquí dinámicamente por JS -->
+    </div>
+
+
+    <!-- Mensaje de carga (inicialmente oculto por JS) -->
+    <div id="loading-message" class="card" style="display: none;"> <!-- Oculta inicialmente -->
+        <p>Analizando documento y generando preguntas con IA... por favor espera.</p>
+        <!-- Podríamos añadir un spinner CSS aquí -->
+    </div>
+
+
+</div> <!-- Fin del div.container -->
+
+<!-- Enlazamos el archivo JavaScript al final del body -->
+<script src="script.js"></script>
+
+</body>
+</html>
