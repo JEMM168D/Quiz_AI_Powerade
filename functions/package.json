@@ -1,0 +1,24 @@
+{
+  "name": "quiz-ia-backend-gcp-openai",
+  "version": "1.0.0",
+  "description": "Funciones backend para Quiz IA usando OpenAI en GCP",
+  "main": "index.js",
+  "dependencies": {
+    "mammoth": "^1.7.0",
+    "pdf-parse": "^1.1.1",
+    "openai": "^4.0.0",
+    "@google-cloud/functions-framework": "^3.3.0",
+    "cors": "^2.8.5"
+  },
+  "scripts": {
+    "start:generate": "functions-framework --target=generateQuiz --port=8081",
+    "start:analyze": "functions-framework --target=analyzeResults --port=8082",
+    "deploy:generateQuiz": "gcloud functions deploy generateQuiz --gen2 --runtime nodejs18 --trigger-http --allow-unauthenticated --entry-point generateQuiz --region=TU_REGION --source=. --env-vars-file=.env.yaml --timeout=300s --max-instances=10",
+    "deploy:analyzeResults": "gcloud functions deploy analyzeResults --gen2 --runtime nodejs18 --trigger-http --allow-unauthenticated --entry-point analyzeResults --region=TU_REGION --source=. --env-vars-file=.env.yaml --max-instances=5"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "author": "",
+  "license": "ISC"
+}
